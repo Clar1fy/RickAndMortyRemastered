@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.timplifier.boilerplate">
+    package="com.timplifier.rickandmortyremastered">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION/" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".App"
@@ -23,8 +18,9 @@
         android:theme="@style/Theme.Boilerplate"
         tools:targetApi="31">
         <activity
-            android:name="com.timplifier.boilerplate.presentation.ui.activity.MainActivity"
-            android:exported="true">
+            android:name="com.timplifier.rickandmortyremastered.presentation.ui.activity.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,5 +28,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
