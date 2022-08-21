@@ -1,4 +1,4 @@
-package com.timplifier.boilerplate.presentation.base
+package com.timplifier.rickandmortyremastered.presentation.base
 
 import android.os.Bundle
 import android.view.View

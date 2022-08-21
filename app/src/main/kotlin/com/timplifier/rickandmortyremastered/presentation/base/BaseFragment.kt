@@ -1,4 +1,4 @@
-package com.timplifier.boilerplate.presentation.base
+package com.timplifier.rickandmortyremastered.presentation.base
 
 import android.os.Bundle
 import android.view.View
@@ -12,13 +12,15 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.progressindicator.CircularProgressIndicator
-import com.timplifier.boilerplate.data.ui.state.UIState
+import com.timplifier.rickandmortyremastered.presentation.ui.state.UIState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(@LayoutRes layoutId: Int) :
+abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
+    @LayoutRes layoutId: Int
+) :
     Fragment(layoutId) {
     protected abstract val binding: Binding
     protected abstract val viewModel: ViewModel
