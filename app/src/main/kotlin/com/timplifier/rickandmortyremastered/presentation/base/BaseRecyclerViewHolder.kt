@@ -1,4 +1,4 @@
-package com.timplifier.boilerplate.presentation.base
+package com.timplifier.rickandmortyremastered.presentation.base
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding

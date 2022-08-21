@@ -1,12 +1,12 @@
-package com.timplifier.boilerplate.presentation.base
+package com.timplifier.rickandmortyremastered.presentation.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.timplifier.boilerplate.domain.either.Either
-import com.timplifier.boilerplate.presentation.ui.state.UIState
+import com.timberta.rickandmortyremastered.common.either.Either
+import com.timplifier.rickandmortyremastered.presentation.ui.state.UIState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
