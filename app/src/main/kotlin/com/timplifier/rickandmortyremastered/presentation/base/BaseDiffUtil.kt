@@ -2,12 +2,12 @@ package com.timplifier.rickandmortyremastered.presentation.base
 
 import androidx.recyclerview.widget.DiffUtil
 
-interface IBaseDiffModel<T> {
+interface BaseDiffModel<T> {
     val id: T
     override fun equals(other: Any?): Boolean
 }
 
-class BaseDiffUtil<T : IBaseDiffModel<S>, S> :
+class BaseDiffUtil<T : BaseDiffModel<S>, S> :
     DiffUtil.ItemCallback<T>() {
 
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
