@@ -30,7 +30,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         super.onViewCreated(view, savedInstanceState)
         initialize()
         assembleViews()
-        setupListeners()
+        constructListeners()
         establishRequest()
         launchObservers()
     }
@@ -41,7 +41,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
     protected open fun assembleViews() {
     }
 
-    protected open fun setupListeners() {
+    protected open fun constructListeners() {
     }
 
 
