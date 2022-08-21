@@ -12,15 +12,16 @@ plugins {
     // Navigation SafeArgs
     id(libs.plugins.navigation.safeArgs.get().pluginId)
 
-    // Hilt
-    id(libs.plugins.hilt.android.get().pluginId)
+    // Apollo
+    id(libs.plugins.apollo.apollo.get().pluginId)
 }
+
 
 android {
     compileSdk = config.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.timplifier.boilerplate"
+        applicationId = "com.timplifier.rickandmortyremastered"
         minSdk = config.versions.minSdk.get().toInt()
         targetSdk = config.versions.targetSdk.get().toInt()
         versionCode = 1
@@ -57,7 +58,6 @@ android {
 
 dependencies {
     implementation(project(":data"))
-    implementation(project(":domain"))
 
     // UI Components
     implementation(libs.bundles.uiComponents)
@@ -71,7 +71,15 @@ dependencies {
     // Navigation
     implementation(libs.bundles.navigation)
 
-    // Hilt
-    implementation(libs.bundles.hilt)
-    kapt(libs.hilt.compiler)
+    // Dagger
+    implementation(libs.dagger.dagger)
+    kapt(libs.dagger.compiler)
+
+    // Room
+    kapt(libs.room.compiler)
+}
+
+apollo {
+    packageName.set("com.timplifier.rickandmortyremastered")
+    generateKotlinModels.set(true)
 }
