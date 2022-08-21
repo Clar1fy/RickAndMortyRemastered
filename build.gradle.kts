@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.agp.library) apply false
     alias(libs.plugins.kotlin.gradle) apply false
     alias(libs.plugins.navigation.safeArgs) apply false
-    alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.apollo.apollo) apply false
 }
 
 tasks.register("clean").configure {
