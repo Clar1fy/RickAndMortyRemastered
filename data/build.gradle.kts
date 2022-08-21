@@ -1,4 +1,5 @@
 plugins {
+
     // Application
     id(libs.plugins.agp.library.get().pluginId)
 
@@ -7,6 +8,9 @@ plugins {
 
     // Kapt
     id("kotlin-kapt")
+
+    // Apollo
+    id(libs.plugins.apollo.apollo.get().pluginId)
 }
 
 
@@ -27,11 +31,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://dummy.com\"")
+            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/\"")
         }
 
         getByName(config.versions.debugBuildType.get()) {
-            buildConfigField("String", "BASE_URL", "\"https://dummy.com/debug\"")
+            buildConfigField("String", "BASE_URL", "\"https://rickandmortyapi.com/\"")
         }
     }
     compileOptions {
@@ -48,18 +52,26 @@ android {
 
 dependencies {
 
-    implementation(project(":domain"))
+    api(project(":domain"))
 
     // Retrofit
     implementation(libs.bundles.retrofit)
+
+    // Apollo
+    api(libs.bundles.apollo)
 
     // OkHttp
     implementation(libs.bundles.okHttp)
 
     // Room
-    implementation(libs.bundles.room)
+    api(libs.bundles.room)
     kapt(libs.room.compiler)
 
     // Paging 3
     api(libs.paging.paging)
+}
+
+apollo {
+    packageName.set("com.timplifier.rickandmortyremastered")
+    generateKotlinModels.set(true)
 }
